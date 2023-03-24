@@ -1,14 +1,1 @@
-{
-  "home": {
-    "Home title": "Trang chu",
-    "Home description": "Trang chu mo ta"
-  },
-  "about": {
-    "About title": "Tieu de ve chung toi",
-    "About description": "Mo ta ve chung toi"
-  },
-  "header": {
-    "Home": "trang chu",
-    "About": "ve chung toi"
-  }
-}
+{"about":"Về chúng tôi","categories":"Danh mục","contact":"Liên hệ","english":"Tiếng Anh","home":"Trang chủ","language":"Ngôn ngữ","login":"Đăng nhập","posts":"Bài viết","register":"Đăng ký","signIn":"Đăng nhập","signUp":"Đăng ký","vietnamese":"Tiếng Việt"}

@@ -1,14 +1,1 @@
-{
-  "home": {
-    "Home title": "Home title",
-    "Home description": "Home description"
-  },
-  "about": {
-    "About title": "About title",
-    "About description": "About description"
-  },
-  "header": {
-    "Home": "Home",
-    "About": "About"
-  }
-}
+{"about":"About","categories":"Categories","contact":"Contact","english":"English","home":"Home","language":"Language","login":"Login","posts":"Posts","register":"Register","signIn":"Sign in","signUp":"Sign up","vietnamese":"Vietnamese"}

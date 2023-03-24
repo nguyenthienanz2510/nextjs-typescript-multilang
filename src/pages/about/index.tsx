@@ -12,16 +12,15 @@ export default function About() {
         <Link href='/'>Next.js Multi-Language</Link>
         <ul className='flex gap-5'>
           <li>
-            <Link href='/'>{t('common:header.Home')}</Link>
+            <Link href='/'>{t('common:home')}</Link>
           </li>
           <li>
-            <Link href='/about'>{t('common:header.About')}</Link>
+            <Link href='/about'>{t('common:about')}</Link>
           </li>
         </ul>
         <LanguageSwitcher />
       </nav>
-      <p>{t('common:about.About description')}</p>
-      <p>{t('common:about.About title')}</p>
+      <p>{t('common:about')}</p>
     </div>
   )
 }
