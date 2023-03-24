@@ -2,9 +2,13 @@ import { useTranslation } from 'next-i18next'
 import { Link } from 'next-translate-routes'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import LanguageSwitcher from '../components/common/LanguageSwitcher'
+import { useEffect } from 'react'
 
 export default function Home() {
   const { t } = useTranslation(['common'])
+  console.log('ENV ====>', process.env.I18NEXUS_KEY)
+  // useEffect(() => {
+  // }, [])
   return (
     <>
       <div className='container'>
@@ -22,6 +26,7 @@ export default function Home() {
         </nav>
         <div className='mt-20'>
           <p>{t('common:home')}</p>
+          {/* <p>KEY {process.env.I18NEXUS_KEY}</p> */}
         </div>
       </div>
     </>
