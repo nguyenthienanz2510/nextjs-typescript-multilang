@@ -1,0 +1,14 @@
+{
+  "home": {
+    "Home title": "Trang chu",
+    "Home description": "Trang chu mo ta"
+  },
+  "about": {
+    "About title": "Tieu de ve chung toi",
+    "About description": "Mo ta ve chung toi"
+  },
+  "header": {
+    "Home": "trang chu",
+    "About": "ve chung toi"
+  }
+}
