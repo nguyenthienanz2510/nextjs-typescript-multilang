@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from 'next-translate-routes'
 import { useRouter } from 'next/router'
 
 export default function LanguageSwitcher() {
@@ -14,9 +14,10 @@ export default function LanguageSwitcher() {
         const { pathname, query, asPath } = router
         return (
           <span key={'locale-' + locale}>
-            <Link href={{ pathname, query }} as={asPath} locale={locale}>
+            {/* <Link href={{ pathname, query }} as={asPath} locale={locale}>
               {locale === 'en' ? 'English' : locale === 'vi' ? 'Tieng Viet' : null}
-            </Link>
+            </Link> */}
+            <a href={`/${locale}${asPath}`}>{locale === 'en' ? 'English' : locale === 'vi' ? 'Tieng Viet' : null}</a>
           </span>
         )
       })}

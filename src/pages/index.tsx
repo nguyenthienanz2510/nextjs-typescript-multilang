@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next'
-import Link from 'next/link'
+import { Link } from 'next-translate-routes'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import LanguageSwitcher from '../components/common/LanguageSwitcher'
 
