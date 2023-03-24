@@ -3,11 +3,11 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export default function About() {
-  const { t } = useTranslation('')
+  const { t } = useTranslation(['common'])
   return (
     <div className='container'>
-      <p>{t('header.About')}</p>
-      <p>{t('header.About')}</p>
+      <p>{t('common:about.About description')}</p>
+      <p>{t('common:about.About title')}</p>
     </div>
   )
 }
