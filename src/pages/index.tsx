@@ -3,12 +3,13 @@ import { Link } from 'next-translate-routes'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import LanguageSwitcher from 'src/components/common/LanguageSwitcher'
 import SwitchThemeButton from 'src/components/common/SwitchThemeButton'
+import MainLayout from 'src/components/layouts/MainLayout/MainLayout'
 
 export default function Home() {
   const { t } = useTranslation(['common'])
 
   return (
-    <>
+    <MainLayout>
       <div className='container'>
         <nav className='flex h-20 items-center justify-between dark:bg-color-bg-dark-secondary bg-color-bg-dark-primary text-color-primary dark:text-color-third'>
           <Link href='/'>Next.js Multi-Language</Link>
@@ -27,7 +28,7 @@ export default function Home() {
           <p>{t('common:home')}</p>
         </div>
       </div>
-    </>
+    </MainLayout>
   )
 }
 
