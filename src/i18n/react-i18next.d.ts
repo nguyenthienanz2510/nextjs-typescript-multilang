@@ -1,7 +1,7 @@
 // import the original type declarations
 import 'react-i18next'
 // import all namespaces (for the default language, only)
-import { Resources as MyResources } from './src/i18n/resources'
+import { Resources as MyResources } from './resources'
 
 declare module 'react-i18next' {
   // and extend them!
