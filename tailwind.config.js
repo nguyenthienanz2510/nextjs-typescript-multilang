@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -12,40 +13,23 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      screens: {
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1356px'
-      },
-      padding: {
-        DEFAULT: '12px',
-        sm: '0'
-      }
     },
     extend: {
       colors: {
-        'color-primary': '#FFCC00',
-        'color-primary-active': '#FCD535',
-        'color-secondary': '#009B4D',
-        'color-secondary-active': '#009b4de6',
-        'color-third': '#FAF5E9',
-        'color-white': '#ffffff',
-        'color-black': '#000000',
-        'color-text-light': '#feffff',
-        'color-text-dark': '#1e2329',
-        'color-text-gray-light': '#9CA3AF',
-        'color-text-gray-dark': '#6B7280',
+        'color-primary': '#6467F2',
+        'color-secondary': '#BF83FC',
+        'color-third': '#ff5874',
+        'color-text-dark': '#1F2937',
+        'color-text-dark-opa': '#1F2937CC',
+        'color-text-light': '#E1E7EF',
+        'color-text-light-opa': '#E1E7EFCC',
+        'color-text-light-primary': '#F3F4F6',
         'color-success': '#03a66d',
         'color-info': '#17a2b8',
         'color-warning': '#ffc107',
         'color-danger': '#cf304a',
-        'color-bg-dark-primary': '#1d1e23',
-        'color-bg-dark-secondary': '#121215',
-        'color-border-primary-light': '#374151',
-        'color-bg-white-40': '#ffffff66',
-        'color-bg-white-60': '#ffffff99',
-        'color-border-primary-dark': '#3435391a'
+        'color-bg-dark-primary': '#121827',
+        'color-bg-dark-secondary': '#2A303C',
       },
       fontSize: {
         10: '10px',
