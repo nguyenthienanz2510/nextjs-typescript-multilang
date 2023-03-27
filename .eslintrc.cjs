@@ -27,7 +27,8 @@ module.exports = {
       node: {
         paths: [path.resolve(__dirname, '')],
         extensions: ['.js', '.jsx', '.ts', '.tsx']
-      }
+      },
+      typescript: {}
     }
   },
   env: {

@@ -1,6 +1,6 @@
+import LanguageSwitcher from '@src/components/common/LanguageSwitcher'
+import ThemeSwitcher from '@src/components/common/SwitchThemeButton'
 import { Link } from 'next-translate-routes'
-import LanguageSwitcher from 'src/components/common/LanguageSwitcher'
-import SwitchThemeButton from 'src/components/common/SwitchThemeButton'
 import Sidebar from './components/Sidebar'
 
 export default function MainHeader() {
@@ -16,7 +16,7 @@ export default function MainHeader() {
         </div>
         <div className='mr-12 flex items-center gap-5'>
           <LanguageSwitcher />
-          <SwitchThemeButton />
+          <ThemeSwitcher />
         </div>
         <Sidebar />
       </div>
