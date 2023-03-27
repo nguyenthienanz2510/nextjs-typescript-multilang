@@ -1,11 +1,21 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require('path')
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { resolve } = require('path')
 
-module.exports = {
+const DEFAULT_LOCALE = process.env.DEFAULT_LOCALE || 'en'
+
+/**
+ * @type {import("next/dist/server/config-shared").I18NConfig}
+ */
+const config = {
+  // debug: process.env.NODE_ENV === 'development',
   i18n: {
-    locales: ['en', 'vi'],
-    defaultLocale: 'en',
-    localeDetection: false,
-    localePath: path.resolve('./public/locales')
-  }
+    defaultLocale: DEFAULT_LOCALE,
+    locales: [DEFAULT_LOCALE, 'vi']
+  },
+  fallbackLng: {
+    default: [DEFAULT_LOCALE]
+  },
+  localePath: resolve('./public/locales')
 }
+
+module.exports = config
