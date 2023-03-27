@@ -1,6 +1,5 @@
 import classNames from 'classnames'
-import { useRouter } from 'next-translate-routes'
-import Link from 'next/link'
+import { Link, useRouter } from 'next-translate-routes'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import path from 'src/constant/path'
