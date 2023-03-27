@@ -2,11 +2,11 @@ import { useState } from 'react'
 import { DarkModeSwitch } from 'react-toggle-dark-mode'
 import useDarkMode from 'src/hooks/useTheme'
 
-interface SwitchThemeButtonProps {
+interface ThemeSwitcherProps {
   size?: number
 }
 
-export default function SwitchThemeButton({ size = 20 }: SwitchThemeButtonProps) {
+export default function ThemeSwitcher({ size = 20 }: ThemeSwitcherProps) {
   const [colorTheme, setTheme] = useDarkMode()
   const [darkMode, setDarkMode] = useState(colorTheme === 'dark' ? true : false)
   const toggleDarkMode = (checked: boolean) => {
