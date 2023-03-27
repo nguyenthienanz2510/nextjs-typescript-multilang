@@ -6,7 +6,7 @@ import Sidebar from './components/Sidebar'
 export default function MainHeader() {
   return (
     <header className='bg-color-bg-dark-primary text-color-text-light-primary'>
-      <div className='flex h-20 items-center justify-between px-4 sm:px-10 xl:px-16'>
+      <div className='flex h-20 items-center justify-between px-4 sm:px-10'>
         <div className='flex h-7 items-center'>
           <Link href={'/'}>
             <div className='text-20 sm:text-24'>

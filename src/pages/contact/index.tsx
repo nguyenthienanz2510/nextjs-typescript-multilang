@@ -2,13 +2,13 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import MainLayout from 'src/components/layouts/MainLayout/MainLayout'
 
-export default function HomePage() {
+export default function ContactPage() {
   const { t } = useTranslation(['common'])
 
   return (
     <MainLayout>
       <div className='mt-20'>
-        <p>{t('common:home')}</p>
+        <p>{t('common:contact')}</p>
       </div>
     </MainLayout>
   )

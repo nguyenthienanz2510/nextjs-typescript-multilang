@@ -1,60 +1,75 @@
-@import '@/styles/scss/variable';
 
-.hamburgerIcon {
-  position: relative;
-  width: 28px;
-  height: 24px;
-  background: transparent;
-  cursor: pointer;
 
-  input {
-    display: none;
+.sidebar {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  .sidebar__top {
+    background-color: black;
+    .hamburger__icon {
+      position: relative;
+      width: 28px;
+      height: 24px;
+      background: transparent;
+      cursor: pointer;
+    
+      input {
+        display: none;
+      }
+    
+      span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: #6467F2;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+      }
+    
+      span:nth-of-type(1) {
+        top: 0px;
+        transform-origin: left center;
+      }
+    
+      span:nth-of-type(2) {
+        top: 50%;
+        transform: translateY(-50%);
+        transform-origin: left center;
+      }
+    
+      span:nth-of-type(3) {
+        top: 100%;
+        transform-origin: left center;
+        transform: translateY(-100%);
+      }
+    
+      input:checked ~ span:nth-of-type(1) {
+        transform: rotate(45deg);
+        top: 0px;
+        left: 4px;
+      }
+    
+      input:checked ~ span:nth-of-type(2) {
+        width: 0%;
+        opacity: 0;
+      }
+    
+      input:checked ~ span:nth-of-type(3) {
+        transform: rotate(-45deg);
+        top: 20px;
+        left: 4px;
+      }
+    }
   }
-
-  span {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: $color-primary;
-    border-radius: 9px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: 0.25s ease-in-out;
-  }
-
-  span:nth-of-type(1) {
-    top: 0px;
-    transform-origin: left center;
-  }
-
-  span:nth-of-type(2) {
-    top: 50%;
-    transform: translateY(-50%);
-    transform-origin: left center;
-  }
-
-  span:nth-of-type(3) {
-    top: 100%;
-    transform-origin: left center;
-    transform: translateY(-100%);
-  }
-
-  input:checked ~ span:nth-of-type(1) {
-    transform: rotate(45deg);
-    top: 0px;
-    left: 4px;
-  }
-
-  input:checked ~ span:nth-of-type(2) {
-    width: 0%;
-    opacity: 0;
-  }
-
-  input:checked ~ span:nth-of-type(3) {
-    transform: rotate(-45deg);
-    top: 20px;
-    left: 4px;
+  .sidebar__body {
+    
   }
 }
