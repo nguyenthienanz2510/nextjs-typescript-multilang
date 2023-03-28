@@ -49,7 +49,7 @@ export default function Sidebar() {
   }
   return (
     <React.Fragment>
-      <div className={`${styles.sidebar__top} pr-4 sm:pr-10`}>
+      <div className={`${styles.sidebar__top} h-16 pr-4 sm:h-20 sm:pr-10`}>
         <button className='ml-auto flex h-6 w-7 items-center justify-center'>
           <label htmlFor='hamburgerIcon' className={styles['hamburger__icon']}>
             <input id='hamburgerIcon' type='checkbox' onClick={handleSidebarSwitcher} />
@@ -59,7 +59,12 @@ export default function Sidebar() {
           </label>
         </button>
       </div>
-      <div className={`${styles.sidebar__body} ${isOpen ? styles.active : ''} w-full sm:w-[420px]`} ref={sideBarBody}>
+      <div
+        className={`${styles.sidebar__body} ${
+          isOpen ? styles.active : ''
+        } w-full px-4 pt-16 sm:w-[420px] sm:px-10 sm:pt-20`}
+        ref={sideBarBody}
+      >
         <ul>
           {dataNavbar.map((item) => (
             <li key={item.slug} className='py-5 opacity-0'>

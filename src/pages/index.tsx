@@ -7,7 +7,7 @@ export default function HomePage() {
 
   return (
     <MainLayout>
-      <div className='mt-20'>
+      <div>
         <p>{t('common:home')}</p>
       </div>
     </MainLayout>

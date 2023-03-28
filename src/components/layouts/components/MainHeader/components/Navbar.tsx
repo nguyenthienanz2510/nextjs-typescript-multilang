@@ -27,10 +27,10 @@ export default function Navbar() {
   return (
     <ul className='flex text-color-text-light'>
       {dataNavbar.map((item) => (
-        <li key={item.slug} className='mr-8'>
+        <li key={item.slug} className='mr-12'>
           <Link href={item.slug}>
             <span
-              className={classNames('nav-link-hover-effect mr-12 text-12 uppercase', {
+              className={classNames('nav-link-hover-effect text-14 font-semibold uppercase', {
                 'nav-link-hover-effect--active': item.slug == route
               })}
             >

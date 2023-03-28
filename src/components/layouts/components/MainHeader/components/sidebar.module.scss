@@ -4,7 +4,6 @@
   position: fixed;
   top: 0;
   right: 0;
-  height: 80px;
   display: flex;
   align-items: center;
   z-index: 10;
@@ -14,9 +13,12 @@
     height: 24px;
     background: transparent;
     cursor: pointer;
-
     input {
       display: none;
+    }
+    @media screen and (max-width: 768px) {
+      width: 24px;
+      height: 20px;
     }
 
     span {
@@ -61,6 +63,9 @@
       transform: rotate(-45deg);
       top: 20px;
       left: 4px;
+      @media screen and (max-width: 768px) {
+        top: 17px;
+      }
     }
 
     &:hover {
@@ -69,7 +74,7 @@
           top: 0px;
           transform-origin: left center;
           transform: translateY(-1px);
-          width: 30px;
+          width: 112%;
         }
         &:nth-of-type(2) {
           top: 50%;
@@ -81,14 +86,13 @@
           top: 100%;
           transform-origin: left center;
           transform: translateY(1px);
-          width: 30px;
+          width: 112%;
         }
       }
       input:checked {
         & ~ span:nth-of-type(1) {
           transform: rotate(30deg);
           top: 0px;
-          left: 4px;
         }
         & ~ span:nth-of-type(2) {
           width: 0%;
@@ -97,7 +101,6 @@
         & ~ span:nth-of-type(3) {
           transform: rotate(-30deg);
           top: 20px;
-          left: 4px;
         }
       }
     }
@@ -111,18 +114,15 @@
   right: 0;
   bottom: 0;
   z-index: 9;
-  padding-top: 80px;
-  padding: 80px 40px 40px 40px;
   transform: translateX(100%);
   transition: all 0.5s ease-in-out 0.2s;
   &.active {
     transform: translateX(0);
     transition: all 0.5s ease-in-out;
-    
   }
 }
 .overlay {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   top: 0;
   left: 0;
