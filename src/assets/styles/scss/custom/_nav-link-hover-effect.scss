@@ -1,7 +1,7 @@
 .nav-link-hover-effect {
   position: relative;
   padding: 4px 0;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .nav-link-hover-effect:before {
@@ -16,8 +16,10 @@
   transition: all 0.3s ease-in-out;
 }
 
-.nav-link-hover-effect--active {
+.nav-link-hover-effect--active,
+.nav-link-hover-effect:hover {
   color: $color-primary !important;
+  font-weight: 700;
 }
 
 .nav-link-hover-effect:hover::before {

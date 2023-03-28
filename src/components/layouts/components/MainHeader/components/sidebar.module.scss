@@ -1,101 +1,124 @@
 @import '@styles/scss/variable';
 
-.sidebar {
+.sidebar__top {
   position: fixed;
   top: 0;
   right: 0;
-  bottom: 0;
-  width: 420px;
-  .sidebar__top {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  .hamburger__icon {
     position: relative;
-    &::before {
-      content: '';
+    width: 28px;
+    height: 24px;
+    background: transparent;
+    cursor: pointer;
+
+    input {
+      display: none;
+    }
+
+    span {
       display: block;
       position: absolute;
-      top: 0;
+      height: 3px;
+      width: 100%;
+      background: $color-text-light-primary;
+      border-radius: 9px;
+      opacity: 1;
       left: 0;
-      right: 0;
-      bottom: 0;
-      background: black;
-      transform: translateX(100%);
-      transition: all 0.5s ease-in;
-    }
-    .hamburger__icon {
-      position: relative;
-      width: 28px;
-      height: 24px;
-      background: transparent;
-      cursor: pointer;
-
-      input {
-        display: none;
-      }
-
-      span {
-        display: block;
-        position: absolute;
-        height: 3px;
-        width: 100%;
-        background: $color-text-light-primary;
-        border-radius: 9px;
-        opacity: 1;
-        left: 0;
-        transform: rotate(0deg);
-        transition: 0.25s ease-in-out;
-      }
-
-      span:nth-of-type(1) {
+      transform: rotate(0deg);
+      transition: 0.25s ease-in-out;
+      &:nth-of-type(1) {
         top: 0px;
         transform-origin: left center;
       }
-
-      span:nth-of-type(2) {
+      &:nth-of-type(2) {
         top: 50%;
         transform: translateY(-50%);
         transform-origin: left center;
       }
-
-      span:nth-of-type(3) {
+      &:nth-of-type(3) {
         top: 100%;
         transform-origin: left center;
         transform: translateY(-100%);
       }
+    }
 
-      input:checked ~ span:nth-of-type(1) {
-        transform: rotate(45deg);
-        top: 0px;
-        left: 4px;
+    input:checked ~ span:nth-of-type(1) {
+      transform: rotate(45deg);
+      top: 0px;
+      left: 4px;
+    }
+
+    input:checked ~ span:nth-of-type(2) {
+      width: 0%;
+      opacity: 0;
+    }
+
+    input:checked ~ span:nth-of-type(3) {
+      transform: rotate(-45deg);
+      top: 20px;
+      left: 4px;
+    }
+
+    &:hover {
+      span {
+        &:nth-of-type(1) {
+          top: 0px;
+          transform-origin: left center;
+          transform: translateY(-1px);
+          width: 30px;
+        }
+        &:nth-of-type(2) {
+          top: 50%;
+          transform: translateY(-50%);
+          transform: translateX(-4px);
+          transform-origin: left center;
+        }
+        &:nth-of-type(3) {
+          top: 100%;
+          transform-origin: left center;
+          transform: translateY(1px);
+          width: 30px;
+        }
       }
-
-      input:checked ~ span:nth-of-type(2) {
-        width: 0%;
-        opacity: 0;
-      }
-
-      input:checked ~ span:nth-of-type(3) {
-        transform: rotate(-45deg);
-        top: 20px;
-        left: 4px;
+      input:checked {
+        & ~ span:nth-of-type(1) {
+          transform: rotate(30deg);
+          top: 0px;
+          left: 4px;
+        }
+        & ~ span:nth-of-type(2) {
+          width: 0%;
+          opacity: 0;
+        }
+        & ~ span:nth-of-type(3) {
+          transform: rotate(-30deg);
+          top: 20px;
+          left: 4px;
+        }
       }
     }
   }
-  .sidebar__body {
-    transform: translateX(100%);
-    transition: all 0.5s ease-in;
-    background: black;
-    height: 100%;
-  }
-
+}
+.sidebar__body {
+  background: black;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  padding-top: 80px;
+  padding: 80px 40px 40px 40px;
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out 0.2s;
   &.active {
-    z-index: 10;
-    .sidebar__top {
-      &::before {
-        transform: translateX(0);
-      }
-    }
-    .sidebar__body {
-      transform: translateX(0);
-    }
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+    
   }
 }
 .overlay {
@@ -105,14 +128,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 9;
+  z-index: 8;
   display: none;
-  &.active {
-    display: block;
-  }
 }
 
-@keyframes sidebarItemAnimationShow {
+@keyframes sidebarAnimationShow {
   from {
     opacity: 0;
     transform: translateX(100%);
@@ -123,7 +143,7 @@
   }
 }
 
-@keyframes sidebarItemAnimationHide {
+@keyframes sidebarAnimationHide {
   from {
     opacity: 1;
     transform: translateX(0);
