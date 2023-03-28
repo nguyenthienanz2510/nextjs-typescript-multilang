@@ -3,14 +3,45 @@ import classNames from 'classnames'
 import { useTranslation } from 'next-i18next'
 import { Link, useRouter } from 'next-translate-routes'
 import React, { useMemo, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
 import styles from './sidebar.module.scss'
+import useWindowSize from '@src/hooks/useWindowSize'
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const sideBarBody = useRef<HTMLDivElement | null>(null)
+  const sideBarBg = useRef<HTMLDivElement | null>(null)
   const overlayElement = useRef<HTMLDivElement | null>(null)
+  const { windowWidth, windowHeight } = useWindowSize()
   const { t } = useTranslation(['common'])
   const { route } = useRouter()
+
+  const sidebar = useMemo(() => {
+    return {
+      open: () => ({
+        clipPath:
+          (windowWidth || 0) >= 640
+            ? `circle(${(windowHeight || 0) * 2 + 200}px at 366px 40px)`
+            : `circle(${(windowHeight || 0) * 2 + 200}px at ${(windowWidth || 0) - 30}px 32px)`,
+        transition: {
+          type: 'spring',
+          stiffness: 20,
+          restDelta: 2
+        }
+      }),
+      closed: {
+        clipPath:
+          (windowWidth || 0) >= 640 ? `circle(0px at 366px 40px)` : `circle(0px at ${(windowWidth || 0) - 30}px 32px)`,
+        transition: {
+          delay: 0.5,
+          type: 'spring',
+          stiffness: 400,
+          damping: 40
+        }
+      }
+    }
+  }, [windowWidth, windowHeight])
+
   const dataNavbar = useMemo(
     () => [
       {
@@ -32,9 +63,11 @@ export default function Sidebar() {
   const handleSidebarSwitcher = () => {
     if (!isOpen) {
       setIsOpen(!isOpen)
+      // sideBarBg.current && (sideBarBg.current.style.background = 'black')
       overlayElement.current && (overlayElement.current.style.display = 'block')
     } else {
       setIsOpen(!isOpen)
+      // sideBarBg.current && (sideBarBg.current.style.background = 'transparent')
       overlayElement.current && (overlayElement.current.style.display = 'none')
     }
     sideBarBody.current?.children[0].childNodes.forEach((item, index) => {
@@ -59,6 +92,7 @@ export default function Sidebar() {
           </label>
         </button>
       </div>
+
       <div
         className={`${styles.sidebar__body} ${
           isOpen ? styles.active : ''
@@ -67,20 +101,29 @@ export default function Sidebar() {
       >
         <ul>
           {dataNavbar.map((item) => (
-            <li key={item.slug} className='py-5 opacity-0'>
+            <motion.li key={item.slug} className='opacity-0'>
               <Link href={item.slug}>
-                <span
-                  className={classNames('nav-link-hover-effect text-14 uppercase', {
-                    'nav-link-hover-effect--active': item.slug == route
+                <motion.span
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.9 }}
+                  className={classNames('inline-block py-4 text-14 uppercase', {
+                    'text-color-primary': item.slug == route
                   })}
                 >
                   {item.name}
-                </span>
+                </motion.span>
               </Link>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>
+      <motion.div
+        className={`${styles.sidebar__bg} w-full sm:w-[420px]`}
+        initial={false}
+        animate={isOpen ? 'open' : 'closed'}
+        variants={sidebar}
+        ref={sideBarBg}
+      />
       <div className={styles.overlay} ref={overlayElement}></div>
     </React.Fragment>
   )
