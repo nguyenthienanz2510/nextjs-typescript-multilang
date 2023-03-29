@@ -10,8 +10,8 @@ export default function MainHeader() {
       <div className='flex h-16 items-center justify-between px-4 sm:h-20 sm:px-10'>
         <div className='flex h-7 items-center'>
           <Link href={'/'}>
-            <div className='text-18 sm:text-24'>
-              <span className='box-content border-b-4 border-color-primary font-bold sm:border-b-[6px]'>
+            <div className='text-18 hover:text-color-text-light-primary sm:text-24'>
+              <span className='box-content border-b-4 border-color-secondary font-bold sm:border-b-[6px]'>
                 Vietnamese
               </span>
               History
