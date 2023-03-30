@@ -106,7 +106,7 @@ export default function Sidebar() {
                 <motion.span
                   whileHover={{ scale: 1.15 }}
                   whileTap={{ scale: 0.9 }}
-                  className={classNames('inline-block py-4 text-14 uppercase', {
+                  className={classNames('inline-block py-4 text-14 font-semibold uppercase', {
                     'text-color-primary': item.slug == route
                   })}
                 >

@@ -11,7 +11,7 @@ export default function MainHeader() {
         <div className='flex h-7 items-center'>
           <Link href={'/'}>
             <div className='text-18 hover:text-color-text-light-primary sm:text-24'>
-              <span className='box-content border-b-4 border-color-secondary font-bold sm:border-b-[6px]'>
+              <span className='box-content border-b-4 border-color-primary font-bold sm:border-b-[6px]'>
                 Vietnamese
               </span>
               History
