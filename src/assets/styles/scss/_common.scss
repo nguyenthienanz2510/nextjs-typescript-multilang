@@ -13,3 +13,34 @@
     }
   }
 }
+
+.bg-gradient-primary {
+  background: linear-gradient(to right, $color-primary, $color-secondary);
+}
+
+.text-gradient-primary {
+  background: linear-gradient(65deg, $color-primary, $color-secondary);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-bottom-primary {
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 63%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(65deg, $color-primary, $color-secondary);
+    transition: width 0.3s ease-in;
+  }
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}

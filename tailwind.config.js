@@ -20,8 +20,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        'color-primary': '#38BDF8',
-        'color-secondary': '#EC4899',
+        'color-primary': '#ff6a00',
+        'color-secondary': '#ee0979',
         'color-third': '#6366f1',
         'color-text-dark': '#1F2937',
         'color-text-dark-opa': '#1F2937CC',
@@ -34,7 +34,7 @@ module.exports = {
         'color-danger': '#cf304a',
         'color-bg-dark-primary': '#000000',
         'color-bg-dark-secondary': '#0f172a',
-        'color-bg-dark-third': '#1F2937',
+        'color-bg-dark-third': '#1E293B',
         'color-bg-dark-hover': '#F3F4F61A',
       },
       fontSize: {
