@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import MainLayout from 'src/components/layouts/MainLayout/MainLayout'
+import MainLayout from 'src/components/layouts/MainLayout'
 
 export default function RegisterPage() {
   const { t } = useTranslation(['common'])
