@@ -49,3 +49,19 @@ a {
 input[type='checkbox'] {
   accent-color: $color-primary;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #C0C0C0;
+  height: 30px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}

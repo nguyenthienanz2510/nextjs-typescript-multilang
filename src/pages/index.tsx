@@ -10,7 +10,7 @@ export default function HomePage() {
       <div>
         <p>{t('common:home')}</p>
       </div>
-      <div>
+      <div className='h-[1000px]'>
         <p className='mt-4 text-color-primary'>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam amet, iste ipsum iusto tempora maxime quidem
           adipisci voluptas corporis quam. Temporibus ut voluptates ea hic possimus accusamus rerum quia vero.
