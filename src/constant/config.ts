@@ -1,5 +1,5 @@
 const config = {
-  baseUrl: 'https://api-ecom.duthanhduoc.com/',
+  baseUrl: 'https://vietnamese-history-api.onrender.com/',
   maxSizeUploadAvatar: 1048576
 } as const
 
